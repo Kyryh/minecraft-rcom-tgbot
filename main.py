@@ -77,7 +77,7 @@ def main():
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler(["list", "players"], list_command))
     application.add_handler(
-        CommandHandler("cmd", admin_command, filters.Chat(GROUP_ID))
+        CommandHandler("cmd", admin_command, filters.Chat(int(GROUP_ID)))
     )
     application.run_polling(allowed_updates=Update.ALL_TYPES)
 
